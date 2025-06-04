@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahad - Portfolio</title>
+    <meta name="description" content="Software Developer & Co-founder Portfolio" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+        }
+        .typing-animation::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="scroll-smooth bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 nav-blur border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-900">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-gray-600 hover:text-yellow-500 transition-colors">About</a>
+                    <a href="#projects" class="nav-link text-sm font-medium text-gray-600 hover:text-yellow-500 transition-colors">Projects</a>
+                    <a href="#experiences" class="nav-link text-sm font-medium text-gray-600 hover:text-yellow-500 transition-colors">Experiences</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-gray-600 hover:text-yellow-500 transition-colors">Contact</a>
+                </div>
+                <button onclick="scrollToSection('contact')" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 hover-glow transition-all duration-300">
+                    Get a quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+                    Hi! I'm <span class="text-yellow-500 typing-animation">Fahad</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    A passionate Web Developer from Dhaka, Bangladesh having an experience of designing and building functional websites with WordPress and Web applications with React, Laravel and some other cool libraries and frameworks.
+                </p>
+                <div class="flex space-x-4 mb-8">
+                    <button onclick="scrollToSection('contact')" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 hover-glow transform hover:scale-105 transition-all duration-300">
+                        Get a quote
+                    </button>
+                    <button onclick="scrollToSection('projects')" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:border-yellow-400 hover:text-yellow-500 transition-all duration-300">
+                        Resume
+                    </button>
+                </div>
+                <div class="flex space-x-4">
+                    <div class="p-2 border border-gray-300 rounded-lg hover:border-yellow-400 transition-colors cursor-pointer">
+                        <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <div class="p-2 border border-gray-300 rounded-lg hover:border-yellow-400 transition-colors cursor-pointer">
+                        <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative fade-in flex justify-center md:justify-end">
+                <div class="relative">
+                    <!-- Background shadow circle -->
+                    <div class="absolute inset-0 bg-yellow-200 rounded-full blur-3xl opacity-30 scale-110"></div>
+                    <!-- Main image -->
+                    <div class="relative w-80 h-80">
+                        <img src="https://i.ibb.co/93YsdTZX/Whats-App-Image-2024-11-11-at-16-35-22-cec99114.jpg" alt="Raihan Profile" class="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white">
+                    </div>
+                    <!-- Additional decorative elements -->
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full shadow-lg"></div>
+                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-300 rounded-full shadow-lg"></div>
+                </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">About Me</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">My Story</h3>
+                            <p class="text-gray-600 leading-relaxed">From Dhaka, I began my tech journey young, driven by the vast potential of digital solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">My Career</h3>
+                            <p class="text-gray-600 leading-relaxed">I've tackled projects from web designs to mobile cloud solutions, with a focus on robust, scalable architectures.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">My Passion</h3>
+                            <p class="text-gray-600 leading-relaxed">I dedicate time to mentoring, community involvement, and projects that inspire and educate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Personal Interests</h3>
+                            <p class="text-gray-600 leading-relaxed">Beyond coding, I'm drawn to the latest tech trends, outdoor adventures, and meaningful time with loved ones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What I Do Section -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 fade-in">
+                    <h3 class="text-3xl font-bold text-gray-900">What I Do</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Anything Full Stack developer who wants to explore every tech stack.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                            <span class="text-gray-600">Develop highly functional websites & Web Applications</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                            <span class="text-gray-600">Develop highly interactive front and / User interfaces for your web and mobile applications</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
+                            <span class="text-gray-600">Integration of third party services such as Firebase / Digital Ocean</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Tech Stack Icons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">React</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">Node.js</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">Python</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">Laravel</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">MongoDB</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">Firebase</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">Git</span>
+                        </div>
+                        <div class="p-3 bg-gray-100 rounded-lg hover:bg-yellow-100 transition-colors">
+                            <span class="text-sm font-medium text-gray-700">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <svg viewBox="0 0 400 400" class="w-full h-auto">
+                        <rect x="50" y="100" width="300" height="200" rx="20" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="2"/>
+                        <rect x="100" y="150" width="200" height="100" rx="10" fill="#fef3c7"/>
+                        <circle cx="300" cy="120" r="15" fill="#fbbf24"/>
+                        <rect x="80" y="80" width="60" height="40" rx="5" fill="#374151"/>
+                        <rect x="160" y="80" width="60" height="40" rx="5" fill="#374151"/>
+                        <circle cx="200" cy="200" r="40" fill="#374151"/>
+                        <rect x="180" y="240" width="40" height="60" rx="20" fill="#374151"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Projects</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Here are some of the projects I have worked on from a broad spectrum of my professional engagements.
+                </p>
+                
+                
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow fade-in">
+                    <div class="p-8 text-center">
+                        <div class="w-26 h-16 mx-auto mb-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="rounded-sm">BlackGPT.us</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">BlackGPT.us</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">A chat system specialized for the black community using RAG architecture and a generative AI app.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://blkgpt.com/" target="_blank" rel="noopener noreferrer">
+                                <button class="text-sm text-gray-600 hover:text-yellow-500 transition-colors">
+                                    View Live
+                                </button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow fade-in">
+                    <div class="p-8 text-center">
+                        <div class="w-26 h-16 mx-auto mb-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="rounded-sm">klevere.ai</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">klevere.ai</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">UI assistant tools for marketing, finance, and other sectors.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://www.klevere.ai/" target="_blank" rel="noopener noreferrer">
+                                <button class="text-sm text-gray-600 hover:text-yellow-500 transition-colors">
+                                    View Live
+                                </button>
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow fade-in">
+                    <div class="p-8 text-center">
+                        <div class="w-26 h-16 mx-auto mb-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="rounded-sm">clarify.ai</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">clarify.ai</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">An AI-based medical diagnostic platform that leverages advanced machine learning to deliver insights.</p>
+                        <div class="justify-center space-x-10">
+                            <button class="text-sm text-gray-600 hover:text-yellow-500 transition-colors">View Live</button>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences & Testimonials -->
+    <section id="experiences" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Experiences & Testimonials</h2>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-gray-900 mb-2">92%</div>
+                    <div class="text-sm text-gray-600">of clients recommend my services</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-gray-900 mb-2">99.95%</div>
+                    <div class="text-sm text-gray-600">project completion rate</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-gray-900 mb-2">250+</div>
+                    <div class="text-sm text-gray-600">successful projects</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="text-4xl font-bold text-gray-900 mb-2">87%</div>
+                    <div class="text-sm text-gray-600">increase in client satisfaction</div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 fade-in">
+                    <p class="text-gray-600 italic mb-4">"His technical expertise and personalized approach made him an excellent partner for any tech project. I highly recommend for any tech stack work!"</p>
+                    <div class="font-semibold text-gray-900">Anita Singh</div>
+                    <div class="text-sm text-gray-500">Sr. Software Engineer</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 fade-in">
+                    <p class="text-gray-600 italic mb-4">"Raihan's innovative approach and meticulous attention to detail have significantly streamlined our workflows and improved efficiency."</p>
+                    <div class="font-semibold text-gray-900">Ava Smith</div>
+                    <div class="text-sm text-gray-500">Project Manager</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 fade-in">
+                    <p class="text-gray-600 italic mb-4">"Working with Raihan was transformative. His strategic vision and deep technical knowledge were instrumental in our digital transformation project."</p>
+                    <div class="font-semibold text-gray-900">James Doe</div>
+                    <div class="text-sm text-gray-500">CTO at TechCorp</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Contact Me</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                    DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.
+                </p>
+                
+                <div class="mb-8">
+                    <a href="mailto:contact@example.com" class="text-lg text-gray-900 font-medium hover:text-yellow-500 transition-colors">
+                        fahad@popupgenix.com
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-white border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 mb-4">© 2025 Fahad. All rights reserved.</p>
+            <div class="flex justify-center space-x-4">
+                <div class="p-2 border border-gray-300 rounded-lg hover:border-yellow-400 transition-colors cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </div>
+                <div class="p-2 border border-gray-300 rounded-lg hover:border-yellow-400 transition-colors cursor-pointer">
+                    <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Email client function
+        function openEmailClient() {
+            window.location.href = 'mailto:contact@example.com?subject=Work Inquiry&body=Hello Raihan, I would like to discuss a project with you.';
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Active navigation highlighting
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            function highlightNavigation() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-yellow-500');
+                    link.classList.add('text-gray-600');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.remove('text-gray-600');
+                        link.classList.add('text-yellow-500');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNavigation);
+
+            // Add click events to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+
+            // Project tag interaction
+            const projectTags = document.querySelectorAll('section#projects span[class*="px-4"]');
+            projectTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    projectTags.forEach(t => {
+                        t.classList.remove('bg-yellow-400', 'text-black');
+                        t.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+                    tag.classList.remove('bg-gray-100', 'text-gray-700');
+                    tag.classList.add('bg-yellow-400', 'text-black');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
