@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const PROJECTS = [
     {
@@ -42,10 +43,12 @@ export function Projects() {
                 {PROJECTS.map((project) => (
                     <div key={project.title} className="bento-card overflow-hidden group">
                         <div className="aspect-video bg-gray-900 overflow-hidden relative">
-                            <img 
+                            <Image 
                                 src={project.image} 
                                 alt={project.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
                         </div>
