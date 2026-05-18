@@ -25,12 +25,13 @@ export default function Home() {
       <Booking />
       <Footer />
       
-      {/* Floating CTA for Mobile */}
-      <div className="fixed bottom-8 right-8 z-50 md:hidden">
-        <a href="#booking" className="flex items-center justify-center w-14 h-14 bg-[#0070F3] text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300">
+      {/* Floating Call Option */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <a href="#booking" className="flex items-center justify-center w-14 h-14 bg-primary text-background rounded-full shadow-2xl hover:scale-110 transition-all duration-300">
             <span className="material-symbols-outlined">calendar_month</span>
         </a>
       </div>
+
     </main>
   );
 }

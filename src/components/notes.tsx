@@ -19,20 +19,20 @@ export function Notes() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
                 <div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Founder Notes</h2>
-                    <p className="text-gray-400 max-w-xl text-lg">
+                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Founder Notes</h2>
+                    <p className="text-muted-foreground max-w-xl text-lg">
                         Insights on the intersection of AI research, SaaS growth, and autonomous software engineering.
                     </p>
                 </div>
-                <Link href="#" className="text-[#0070F3] font-bold hover:underline mb-2">View All Notes →</Link>
+                <Link href="#" className="text-primary font-bold hover:underline mb-2">View All Notes →</Link>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
                 {NOTES.map((note) => (
                     <div key={note.title} className="bento-card p-8 group cursor-pointer">
-                        <div className="text-gray-500 text-xs mb-4">{note.date}</div>
-                        <h3 className="text-white font-bold text-2xl mb-4 group-hover:text-[#0070F3] transition-colors">{note.title}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">{note.description}</p>
+                        <div className="text-muted-foreground text-xs mb-4">{note.date}</div>
+                        <h3 className="text-foreground font-bold text-2xl mb-4 group-hover:text-primary transition-colors">{note.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{note.description}</p>
                     </div>
                 ))}
             </div>

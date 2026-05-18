@@ -77,7 +77,7 @@ export function About() {
                     <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-6">Core Competencies</h3>
                     <div className="flex flex-wrap gap-3">
                         {["Agentic AI", "RAG Architectures", "LLM Fine-tuning", "SaaS Scalability", "API Design", "Vector Databases", "Cyber Security"].map((tag) => (
-                          <span key={tag} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-foreground">
+                          <span key={tag} className="px-4 py-2 rounded-full bg-secondary border border-border text-sm text-foreground">
                             {tag}
                           </span>
                         ))}
