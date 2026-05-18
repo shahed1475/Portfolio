@@ -3,12 +3,17 @@
 import { SplineScene } from "@/components/ui/splite";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Marquee } from "@/components/ui/marquee";
 
 export function Hero() {
+  const technologies = [
+    "OpenAI", "Anthropic", "LangChain", "Vercel", "Pinecone", "AWS", "Google Cloud", "NVIDIA"
+  ];
+
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-24 relative overflow-hidden bg-background antialiased">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="hero" className="min-h-screen flex flex-col justify-center pt-24 relative overflow-hidden bg-background antialiased">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 flex-grow flex items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +52,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[500px] lg:h-[700px] w-full"
+            className="relative h-[400px] lg:h-[600px] w-full"
           >
             <SplineScene 
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -56,6 +61,25 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Trust Badge Bar Marquee */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="relative z-10 py-12 border-t border-border mt-auto"
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.3em]">Trusted Technologies & Frameworks</p>
+        </div>
+        <Marquee baseVelocity={-1} className="opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+            {technologies.map((tech) => (
+                <span key={tech} className="text-2xl md:text-3xl font-bold text-foreground px-4">
+                    {tech}
+                </span>
+            ))}
+        </Marquee>
+      </motion.div>
       
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02] dark:opacity-[0.03] z-0" 
