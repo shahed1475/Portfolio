@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahad | AI Systems Architect & SaaS Founder</title>
+    <meta name="description" content="Engineering the Era of Autonomous Intelligence. AI Systems Architect & Founder of PopupGenix." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Geist Sans', 'sans-serif'],
+                        mono: ['Geist Mono', 'monospace'],
+                        "headline-md": ["Geist Sans"],
+                        "display-hero-mobile": ["Geist Sans"],
+                        "body-md": ["Geist Sans"],
+                        "headline-lg": ["Geist Sans"],
+                        "body-lg": ["Geist Sans"],
+                        "label-caps": ["Geist Sans"],
+                        "code-sm": ["Geist Mono"],
+                        "display-hero": ["Geist Sans"]
+                    },
+                    colors: {
+                        primary: '#aec6ff',
+                        accent: '#0070F3',
+                        gold: '#FFD700',
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "border-subtle": "rgba(255, 255, 255, 0.08)",
+                        "secondary-fixed": "#ffe16d",
+                        "primary-fixed-dim": "#aec6ff",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "secondary": "#fff9ef",
+                        "on-primary": "#002e6b",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary-fixed-variant": "#544600",
+                        "tertiary-container": "#757676",
+                        "primary-container": "#0070f3",
+                        "primary-fixed": "#d8e2ff",
+                        "glow-accent": "rgba(0, 112, 243, 0.15)",
+                        "tertiary": "#c6c6c7",
+                        "on-primary-container": "#ffffff",
+                        "inverse-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "surface-card": "rgba(255, 255, 255, 0.03)",
+                        "border-hover": "rgba(255, 255, 255, 0.2)",
+                        "on-surface-variant": "#c1c6d7",
+                        "outline": "#8b90a0",
+                        "inverse-primary": "#0059c5",
+                        "on-background": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed": "#001a43",
+                        "error-container": "#93000a",
+                        "text-muted": "#9CA3AF",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "secondary-container": "#ffdb3c",
+                        "surface-container-highest": "#353534",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#725f00",
+                        "outline-variant": "#414754",
+                        "surface-bright": "#3a3939",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "on-tertiary": "#2f3131",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary": "#3a3000",
+                        "text-dim": "#6B7280",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#aec6ff",
+                        "on-primary-fixed-variant": "#004397",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    spacing: {
+                        "button-px": "2rem",
+                        "button-py": "1rem",
+                        "card-padding": "3rem",
+                        "container-max": "1152px",
+                        "section-gap": "8rem",
+                        "gutter": "2rem"
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-hero-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "code-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css');
+        @import url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/style.css');
+
+        :root {
+            --bg-color: #050505;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(5, 5, 5, 0.8);
+        }
+        .glow-mesh {
+            background: radial-gradient(circle at 50% -20%, rgba(0, 112, 243, 0.15), transparent 70%);
+        }
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .typing-animation::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        ::selection {
+            background: rgba(0, 112, 243, 0.3);
+            color: #fff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-overlay {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 112, 243, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+        }
+    </style>
+</head>
+<body class="scroll-smooth bg-surface-container-lowest">
+    <!-- Background Glow Effect -->
+    <div class="fixed inset-0 glow-overlay pointer-events-none z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                    <span class="w-8 h-8 bg-white text-black flex items-center justify-center rounded-lg font-black text-sm">F</span>
+                    <span>FAHAD</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="#projects" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Case Studies</a>
+                    <a href="#services" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">AI Lab</a>
+                    <a href="#booking" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Book a Call</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="scrollToSection('booking')" class="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition-all duration-300">
+                        Book a Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-400 mb-4">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    Available for AI Solutions & SaaS Architecture
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+                    Orchestrating the Era of <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-white to-gray-500">Autonomous Intelligence</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    Fahad bridges the gap between raw LLM research and production-grade SaaS. Specializing in Agentic Workflows, RAG Architectures, and high-performance AI infrastructure.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                    <button onclick="scrollToSection('booking')" class="w-full sm:w-auto bg-accent text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-all duration-300 shadow-lg shadow-accent/20 flex items-center justify-center gap-2">
+                        <span>Book a Strategy Call</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 00-2 2z"/></svg>
+                    </button>
+                    <button onclick="scrollToSection('projects')" class="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all duration-300">
+                        Explore the Lab
+                    </button>
+                </div>
+                
+                <!-- Trust Badge Bar -->
+                <div class="pt-20 border-t border-white/5">
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-8">Trusted Technologies & Frameworks</p>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                        <!-- We'll use text-based logos for clean look or specific icons -->
+                        <span class="text-xl font-bold text-white">OpenAI</span>
+                        <span class="text-xl font-bold text-white">Anthropic</span>
+                        <span class="text-xl font-bold text-white">LangChain</span>
+                        <span class="text-xl font-bold text-white">Vercel</span>
+                        <span class="text-xl font-bold text-white">Pinecone</span>
+                        <span class="text-xl font-bold text-white">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (The Founder's Thesis) -->
+    <section id="about" class="py-32 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- Main Thesis -->
+                <div class="lg:col-span-2 bento-card p-8 md:p-12 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">The Thesis</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        I don't just build software; I architect intelligent systems that act as a force multiplier for human intent. As the founder of <span class="text-white font-semibold">PopupGenix</span>, my mission is to bridge the gap between experimental AI research and production-grade SaaS solutions.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        The future isn't just "AI-powered"—it's autonomous. I specialize in building the infrastructure that makes that autonomy safe, scalable, and profitable.
+                    </p>
+                </div>
+                
+                <!-- Profile Image / Brand -->
+                <div class="bento-card relative overflow-hidden group">
+                    <img src="https://i.ibb.co/93YsdTZX/Whats-App-Image-2024-11-11-at-16-35-22-cec99114.jpg" alt="Fahad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                        <span class="text-white font-bold text-lg">Fahad</span>
+                        <span class="text-gray-400 text-sm">Founder @ PopupGenix</span>
+                    </div>
+                </div>
+
+                <!-- Stats / Achievement -->
+                <div class="bento-card p-8 flex flex-col justify-between">
+                    <div class="text-4xl font-bold text-white">3+</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest font-semibold">AI SaaS Products Launched</div>
+                </div>
+
+                <!-- Expertise Tags -->
+                <div class="bento-card p-8 lg:col-span-2">
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-6">Core Competencies</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Agentic AI</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">RAG Architectures</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">LLM Fine-tuning</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">SaaS Scalability</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">API Design</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Vector Databases</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Cyber Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="projects" class="py-32 bg-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Selected Case Studies</h2>
+                <p class="text-gray-400 max-w-2xl text-lg">
+                    Deep dives into production-grade AI systems and SaaS architectures designed for scale and high performance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bento-card overflow-hidden group">
+                    <div class="aspect-video bg-gray-900 overflow-hidden relative">
+                        <img src="../public/projects/blackgpt.png" alt="BlackGPT.us" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="px-2 py-1 rounded bg-accent/10 border border-accent/20 text-[10px] font-bold text-accent uppercase tracking-tighter">Generative AI</span>
+                            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-bold text-gray-400 uppercase tracking-tighter">SaaS</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">BlackGPT.us</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            A specialized RAG-based chat ecosystem designed for the black community. Engineered for zero-hallucination and culturally nuanced responses.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm">
+                            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
+                                <span class="block text-white font-bold">Vector DB</span>
+                                <span class="text-gray-500 text-xs">Pinecone Integration</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
+                                <span class="block text-white font-bold">LLM</span>
+                                <span class="text-gray-500 text-xs">GPT-4o Orchestration</span>
+                            </div>
+                        </div>
+                        <a href="https://blkgpt.com/" target="_blank" class="inline-flex items-center gap-2 text-white font-semibold hover:text-accent transition-colors">
+                            View Case Study 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bento-card overflow-hidden group">
+                    <div class="aspect-video bg-gray-900 overflow-hidden relative">
+                        <img src="../public/projects/klevere.png" alt="klevere.ai" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="px-2 py-1 rounded bg-accent/10 border border-accent/20 text-[10px] font-bold text-accent uppercase tracking-tighter">Automation</span>
+                            <span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Enterprise</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">klevere.ai</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Enterprise-grade UI assistant tools orchestrating complex marketing and finance workflows through autonomous agents.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-8 text-sm">
+                            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
+                                <span class="block text-white font-bold">99.9%</span>
+                                <span class="text-gray-500 text-xs">System Uptime</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
+                                <span class="block text-white font-bold">50+</span>
+                                <span class="text-gray-500 text-xs">AI Workflows</span>
+                            </div>
+                        </div>
+                        <a href="https://www.klevere.ai/" target="_blank" class="inline-flex items-center gap-2 text-white font-semibold hover:text-accent transition-colors">
+                            View Case Study 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Lab (Services) Section -->
+    <section id="services" class="py-32 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">The AI Lab</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    Specialized engineering services to integrate autonomous intelligence into your business core.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bento-card p-8 group">
+                    <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Agentic Workflows</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Designing autonomous agent swarms that handle complex, multi-step business logic without human intervention.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bento-card p-8 group">
+                    <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Enterprise RAG</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Custom Retrieval-Augmented Generation systems with zero-hallucination guarantees for internal knowledge bases.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bento-card p-8 group">
+                    <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">SaaS Architecture</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        End-to-end full-stack development focusing on sub-second latency, security, and extreme scalability.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bento-card p-8 group">
+                    <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">AI Security Audit</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Hardening LLM implementations against prompt injection and ensuring data privacy in automated systems.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bento-card p-8 group md:col-span-2">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-white mb-4">Custom LLM Fine-Tuning</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Optimizing open-source models (Llama 3, Mistral) for specific domain expertise, reducing costs while increasing precision.
+                            </p>
+                        </div>
+                        <div class="flex-none bg-accent text-white px-6 py-3 rounded-full font-bold cursor-pointer hover:bg-accent/80 transition-all">
+                            Get Custom Quote
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process Section (High Authority) -->
+    <section id="process" class="py-32 relative overflow-hidden bg-white/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">How I Build</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    A rigorous, architectural approach to deploying intelligence at scale.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="text-accent font-mono text-xs font-bold uppercase tracking-widest">Phase 01</div>
+                    <h3 class="text-white font-bold text-xl">System Architecture</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mapping data flows, selecting vector architectures, and defining the agent orchestration logic before a single line of code is written.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-accent font-mono text-xs font-bold uppercase tracking-widest">Phase 02</div>
+                    <h3 class="text-white font-bold text-xl">Iterative Deployment</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Building the core RAG/Agentic layer with continuous benchmarking against domain-specific edge cases.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-accent font-mono text-xs font-bold uppercase tracking-widest">Phase 03</div>
+                    <h3 class="text-white font-bold text-xl">Optimization & Scale</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Hardening security, optimizing token usage, and scaling the infrastructure to handle enterprise-level request volumes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Notes (Build in Public) -->
+    <section id="notes" class="py-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Founder Notes</h2>
+                    <p class="text-gray-400 max-w-xl text-lg">
+                        Insights on the intersection of AI research, SaaS growth, and autonomous software engineering.
+                    </p>
+                </div>
+                <a href="#" class="text-accent font-bold hover:underline mb-2">View All Notes →</a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bento-card p-8 group cursor-pointer">
+                    <div class="text-gray-500 text-xs mb-4">MAY 2026 • 5 MIN READ</div>
+                    <h3 class="text-white font-bold text-2xl mb-4 group-hover:text-accent transition-colors">The Shift from Chatbots to Autonomous Agents</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Why the next generation of SaaS will be defined by software that thinks, plans, and executes—not just responds.</p>
+                </div>
+                <div class="bento-card p-8 group cursor-pointer">
+                    <div class="text-gray-500 text-xs mb-4">APR 2026 • 8 MIN READ</div>
+                    <h3 class="text-white font-bold text-2xl mb-4 group-hover:text-accent transition-colors">Architecting for Zero-Hallucination in Enterprise RAG</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A deep dive into advanced hybrid search and reranking techniques for production-grade AI systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack & Architecture Section -->
+    <section id="stack" class="py-32 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">The Technical Engine</h2>
+                <p class="text-gray-400 max-w-2xl text-lg">
+                    A high-performance stack engineered for low latency, extreme scalability, and autonomous decision-making.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- AI Infrastructure -->
+                <div class="md:col-span-2 bento-card p-8">
+                    <h3 class="text-white font-bold mb-4">AI Infrastructure</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10 text-sm">
+                            <span class="text-gray-500 block mb-1">Models</span>
+                            <span class="text-white font-semibold">GPT-4o, Llama 3, Claude 3.5</span>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10 text-sm">
+                            <span class="text-gray-500 block mb-1">Vector DB</span>
+                            <span class="text-white font-semibold">Pinecone, Weaviate</span>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10 text-sm">
+                            <span class="text-gray-500 block mb-1">Frameworks</span>
+                            <span class="text-white font-semibold">LangChain, CrewAI, AutoGPT</span>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg border border-white/10 text-sm">
+                            <span class="text-gray-500 block mb-1">Ops</span>
+                            <span class="text-white font-semibold">LangSmith, Weights & Biases</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Architecture -->
+                <div class="bento-card p-8">
+                    <h3 class="text-white font-bold mb-4">Modern Web</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Next.js (App Router)</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> TypeScript (Strict Mode)</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Tailwind CSS</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Framer Motion</li>
+                    </ul>
+                </div>
+
+                <!-- Backend & Cloud -->
+                <div class="bento-card p-8">
+                    <h3 class="text-white font-bold mb-4">Cloud & Backend</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Node.js / Python</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> PostgreSQL / Prisma</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> AWS / Vercel</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Redis / BullMQ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-section-gap relative z-10">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <!-- Hero Section for Booking -->
+            <div class="mb-20 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-surface-container border border-border-subtle">
+                    <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                    <span class="font-code-sm text-code-sm text-primary tracking-widest uppercase">Consultation Available</span>
+                </div>
+                <h2 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero mb-6 text-on-surface">
+                    Book a Strategy <span class="text-primary-container">Session</span>
+                </h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Architecting your autonomous future. Let's discuss RAG, agentic workflows, or SaaS scaling with engineering precision.
+                </p>
+            </div>
+
+            <!-- Main Bento Container -->
+            <div class="grid grid-cols-12 gap-6">
+                <!-- Scheduling Widget Bento Card -->
+                <div class="col-span-12 lg:col-span-8 bg-surface-card border border-border-subtle rounded-xl overflow-hidden min-h-[600px] flex flex-col hover:border-border-hover transition-all duration-300 group">
+                    <div class="p-6 border-b border-border-subtle flex justify-between items-center bg-surface-container-low">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary-container">calendar_today</span>
+                            <span class="font-label-caps text-label-caps text-on-surface">SELECT A TIME</span>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
+                        </div>
+                    </div>
+                    <!-- Calendar UI -->
+                    <div class="flex-grow bg-surface-container-lowest/50 flex flex-col items-center justify-center p-8 relative">
+                        <div class="p-8 flex flex-col md:flex-row gap-10 h-full w-full">
+                            <!-- Calendar Grid Section -->
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-6">
+                                    <span class="font-body-lg text-on-surface font-bold">November 2026</span>
+                                    <div class="flex gap-2">
+                                        <button class="p-2 hover:bg-surface-container rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_left</span>
+                                        </button>
+                                        <button class="p-2 hover:bg-surface-container rounded-lg transition-colors">
+                                            <span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-7 gap-1 text-center mb-2">
+                                    <div class="text-code-sm font-bold text-text-dim">MO</div>
+                                    <div class="text-code-sm font-bold text-text-dim">TU</div>
+                                    <div class="text-code-sm font-bold text-text-dim">WE</div>
+                                    <div class="text-code-sm font-bold text-text-dim">TH</div>
+                                    <div class="text-code-sm font-bold text-text-dim">FR</div>
+                                    <div class="text-code-sm font-bold text-text-dim">SA</div>
+                                    <div class="text-code-sm font-bold text-text-dim">SU</div>
+                                </div>
+
+                                <div class="grid grid-cols-7 gap-1">
+                                    <div class="aspect-square flex items-center justify-center text-text-dim/30 text-body-md">26</div>
+                                    <div class="aspect-square flex items-center justify-center text-text-dim/30 text-body-md">27</div>
+                                    <div class="aspect-square flex items-center justify-center text-text-dim/30 text-body-md">28</div>
+                                    <div class="aspect-square flex items-center justify-center text-text-dim/30 text-body-md">29</div>
+                                    <div class="aspect-square flex items-center justify-center text-text-dim/30 text-body-md">30</div>
+                                    <div class="aspect-square flex items-center justify-center text-text-dim/30 text-body-md">31</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">1</div>
+                                    
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">2</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">3</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">4</div>
+                                    <div class="aspect-square flex items-center justify-center bg-primary-container text-on-primary-container rounded-lg font-bold text-body-md cursor-pointer shadow-[0_0_15px_rgba(0,112,243,0.3)]">5</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">6</div>
+                                    <div class="aspect-square flex items-center justify-center text-on-surface-variant/40 text-body-md">7</div>
+                                    <div class="aspect-square flex items-center justify-center text-on-surface-variant/40 text-body-md">8</div>
+                                    
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">9</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">10</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">11</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">12</div>
+                                    <div class="aspect-square flex items-center justify-center border border-primary-container/40 bg-primary-container/5 rounded-lg text-on-surface text-body-md cursor-pointer hover:bg-primary-container/10 transition-colors">13</div>
+                                    <div class="aspect-square flex items-center justify-center text-on-surface-variant/40 text-body-md">14</div>
+                                    <div class="aspect-square flex items-center justify-center text-on-surface-variant/40 text-body-md">15</div>
+                                    
+                                    <div class="col-span-7 h-1 bg-gradient-to-r from-transparent via-border-subtle to-transparent my-2"></div>
+                                    <div class="col-span-7 text-center">
+                                        <p class="font-code-sm text-code-sm text-text-dim italic">Dates available through Dec 2026</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Time Slots Section -->
+                            <div class="w-full md:w-64 flex flex-col">
+                                <div class="mb-6">
+                                    <p class="font-label-caps text-label-caps text-primary-container mb-1 uppercase">Selected Date</p>
+                                    <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Thursday, Nov 5</h4>
+                                </div>
+                                
+                                <div class="space-y-3 flex-grow">
+                                    <button class="w-full py-4 px-6 rounded-lg border border-border-subtle bg-surface-container-low hover:border-primary-container transition-all text-on-surface font-medium flex justify-between items-center group">
+                                        <span class="">09:00 AM</span>
+                                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary">chevron_right</span>
+                                    </button>
+                                    <button class="w-full py-4 px-6 rounded-lg border border-border-subtle bg-surface-container-low hover:border-primary-container transition-all text-on-surface font-medium flex justify-between items-center group">
+                                        <span class="">10:30 AM</span>
+                                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary">chevron_right</span>
+                                    </button>
+                                    <button class="w-full py-4 px-6 rounded-lg border border-border-subtle bg-surface-container-low hover:border-primary-container transition-all text-on-surface font-medium flex justify-between items-center group">
+                                        <span class="">02:00 PM</span>
+                                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary">chevron_right</span>
+                                    </button>
+                                     <button class="w-full py-4 px-6 rounded-lg border border-border-subtle bg-surface-container-low hover:border-primary-container transition-all text-on-surface font-medium flex justify-between items-center group opacity-50 cursor-not-allowed">
+                                        <span class="line-through">04:30 PM</span>
+                                        <span class="text-code-sm text-error uppercase font-bold">Booked</span>
+                                    </button>
+                                </div>
+
+                                <button class="mt-8 w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-caps text-label-caps hover:shadow-[0_0_20px_rgba(0,112,243,0.3)] transition-all">
+                                    CONFIRM BOOKING
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Bento Column -->
+                <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+                    <!-- Expertise Bento Card -->
+                    <div class="bg-surface-card border border-border-subtle rounded-xl p-8 hover:border-border-hover transition-all duration-300">
+                        <h3 class="font-headline-md text-headline-md mb-8 text-on-surface">What to expect</h3>
+                        <div class="space-y-8">
+                            <div class="flex gap-5">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-border-subtle">
+                                    <span class="material-symbols-outlined text-primary">troubleshoot</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-body-lg text-body-lg font-bold text-on-surface mb-1">1. Technical Audit</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">Deep dive into your current LLM stack, data pipelines, and infrastructure bottlenecks.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-border-subtle">
+                                    <span class="material-symbols-outlined text-primary">account_tree</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-body-lg text-body-lg font-bold text-on-surface mb-1">2. Architecture Roadmap</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">Strategic mapping of agentic workflows and scalable RAG implementation patterns.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-border-subtle">
+                                    <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-body-lg text-body-lg font-bold text-on-surface mb-1">3. Implementation Strategy</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">Step-by-step execution plan for deploying production-grade AI systems at scale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profile Bento Card -->
+                    <div class="bg-surface-card border border-border-subtle rounded-xl p-8 flex items-center gap-6 hover:border-border-hover transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/93YsdTZX/Whats-App-Image-2024-11-11-at-16-35-22-cec99114.jpg" alt="Fahad" class="w-16 h-16 rounded-full object-cover grayscale">
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-surface shadow-[0_0_8px_rgba(34,197,94,0.5)]"></div>
+                        </div>
+                        <div>
+                            <p class="font-label-caps text-label-caps text-primary mb-1">CHIEF ARCHITECT</p>
+                            <p class="font-headline-md text-[20px] text-on-surface leading-tight">Fahad</p>
+                            <p class="font-body-md text-body-md text-text-muted">99.9% Uptime Mentality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Book Call Option Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <button onclick="scrollToSection('booking')" class="group relative flex items-center justify-center w-16 h-16 bg-accent text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300">
+            <span class="material-symbols-outlined text-white text-3xl">calendar_month</span>
+            <span class="absolute right-full mr-4 px-4 py-2 bg-white text-black text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">Book Strategy Session</span>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                    <span class="w-8 h-8 bg-white text-black flex items-center justify-center rounded-lg font-black text-sm">F</span>
+                    <span>FAHAD</span>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    © 2026 PopupGenix. Engineered with precision.
+                </div>
+                <div class="flex gap-8">
+                    <a href="#about" class="text-gray-500 hover:text-white text-sm transition-colors">About</a>
+                    <a href="#projects" class="text-gray-500 hover:text-white text-sm transition-colors">Work</a>
+                    <a href="#services" class="text-gray-500 hover:text-white text-sm transition-colors">Lab</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Email client function
+        function openEmailClient() {
+            window.location.href = 'mailto:contact@example.com?subject=Work Inquiry&body=Hello Fahad, I would like to discuss a project with you.';
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Active navigation highlighting
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            function highlightNavigation() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary');
+                    link.classList.add('text-gray-400');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.remove('text-gray-400');
+                        link.classList.add('text-primary');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNavigation);
+
+            // Add click events to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        const targetId = href.substring(1);
+                        scrollToSection(targetId);
+                    }
+                });
+            });
+
+            // Project tag interaction
+            const projectTags = document.querySelectorAll('section#projects span[class*="px-4"]');
+            projectTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    projectTags.forEach(t => {
+                        t.classList.remove('bg-yellow-400', 'text-black');
+                        t.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+                    tag.classList.remove('bg-gray-100', 'text-gray-700');
+                    tag.classList.add('bg-yellow-400', 'text-black');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

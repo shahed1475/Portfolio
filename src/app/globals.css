@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fbfbfb;
+  --color-foreground: #111111;
+  --color-primary: #0071e3;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f5f5f7;
+  --color-secondary-foreground: #1d1d1f;
+  --color-muted: #86868b;
+  --color-muted-foreground: #6e6e73;
+  --color-accent: #0071e3;
+  --color-accent-foreground: #ffffff;
+  --color-card: #ffffff;
+  --color-card-foreground: #111111;
+  --color-border: #e5e5e7;
+  
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+.dark {
+  --color-background: #0a0a0b;
+  --color-foreground: #ededed;
+  --color-secondary: #161617;
+  --color-secondary-foreground: #f5f5f7;
+  --color-muted-foreground: #a1a1a6;
+  --color-card: #111112;
+  --color-card-foreground: #ededed;
+  --color-border: #1f1f21;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply rounded-lg border border-border bg-card shadow-sm transition-all duration-300;
+  }
+
+  .dark .bento-card {
+    @apply bg-white/[0.02] border-white/[0.05] shadow-none;
+  }
+
+  .nav-blur {
+    @apply backdrop-blur-md bg-background/70;
+  }
+}
+
+/* Typography refinements */
+h1, h2, h3, h4 {
+  @apply tracking-tight font-semibold text-foreground;
+}
+
+p {
+  @apply leading-relaxed text-muted-foreground;
+}
+
+/* Custom Scrollbar - More subtle */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted/20 rounded-full hover:bg-muted/40 transition-colors;
+}
