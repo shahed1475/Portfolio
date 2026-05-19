@@ -108,6 +108,7 @@ export function Booking() {
                 alt="Fahad" 
                 width={80}
                 height={80}
+                unoptimized
                 className="w-20 h-20 rounded-3xl object-cover grayscale brightness-110 relative z-10" 
               />
               <div className="relative z-10 text-center sm:text-left">

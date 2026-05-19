@@ -51,6 +51,7 @@ export function About() {
                         src="https://i.ibb.co/93YsdTZX/Whats-App-Image-2024-11-11-at-16-35-22-cec99114.jpg" 
                         alt="Fahad" 
                         fill
+                        unoptimized
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
                     />
