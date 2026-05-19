@@ -21,12 +21,13 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn(inter.className, "bg-background text-foreground antialiased")}>
+      <body suppressHydrationWarning className={cn(inter.className, "bg-background text-foreground antialiased")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
+          suppressHydrationWarning
         >
           <div className="relative z-10 min-h-screen">
             {children}

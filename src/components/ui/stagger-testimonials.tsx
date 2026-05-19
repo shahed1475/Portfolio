@@ -74,9 +74,9 @@ export const StaggerTestimonials: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden bg-background">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-24">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-background">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -89,7 +89,7 @@ export const StaggerTestimonials: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-foreground tracking-tighter"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tighter"
           >
             Engineering <span className="text-muted-foreground">trust.</span>
           </motion.h2>
@@ -112,24 +112,24 @@ export const StaggerTestimonials: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.9, x: direction > 0 ? -100 : 100 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className={cn(
-                  "absolute w-full max-w-[380px] md:max-w-[440px] rounded-3xl p-10 md:p-12 shadow-sm",
+                  "absolute w-full max-w-[340px] md:max-w-[440px] rounded-[2.5rem] p-8 md:p-12 shadow-sm",
                   "bg-card border border-border",
-                  "flex flex-col justify-between h-[400px] md:h-[440px]",
-                  testimonial.position === 0 ? "shadow-xl" : "pointer-events-none"
+                  "flex flex-col justify-between h-[380px] md:h-[440px]",
+                  testimonial.position === 0 ? "shadow-2xl" : "pointer-events-none"
                 )}
               >
                 <div className="flex-1">
-                  <Quote className="w-8 h-8 text-muted/20 mb-8" />
+                  <Quote className="w-8 h-8 text-primary/20 mb-8" />
                   <p className="text-foreground text-lg md:text-xl font-medium leading-relaxed tracking-tight">
                     "{testimonial.testimonial}"
                   </p>
                 </div>
 
                 <div className="mt-10 flex items-center gap-5 border-t border-border pt-8">
-                  <img src={testimonial.imgSrc} alt={testimonial.by} className="w-12 h-12 rounded-full object-cover grayscale" />
+                  <img src={testimonial.imgSrc} alt={testimonial.by} className="w-12 h-12 rounded-2xl object-cover grayscale" />
                   <div>
-                    <h4 className="text-foreground font-bold text-sm tracking-tight">{testimonial.by}</h4>
-                    <p className="text-muted-foreground text-[11px] font-bold uppercase tracking-widest">{testimonial.role}</p>
+                    <h4 className="text-foreground font-black text-sm tracking-tight">{testimonial.by}</h4>
+                    <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest">{testimonial.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -141,17 +141,17 @@ export const StaggerTestimonials: React.FC = () => {
           <div className="flex gap-4">
             <button
               onClick={handlePrev}
-              className="group flex h-12 w-12 items-center justify-center rounded-full bg-secondary border border-border text-foreground transition-all hover:bg-muted/10 focus:outline-none"
+              className="group flex h-14 w-14 items-center justify-center rounded-full bg-secondary border border-border text-foreground transition-all hover:bg-muted/10 active:scale-95 focus:outline-none shadow-lg"
               aria-label="Previous"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={handleNext}
-              className="group flex h-12 w-12 items-center justify-center rounded-full bg-secondary border border-border text-foreground transition-all hover:bg-muted/10 focus:outline-none"
+              className="group flex h-14 w-14 items-center justify-center rounded-full bg-secondary border border-border text-foreground transition-all hover:bg-muted/10 active:scale-95 focus:outline-none shadow-lg"
               aria-label="Next"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-6 h-6" />
             </button>
           </div>
         </div>

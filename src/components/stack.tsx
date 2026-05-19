@@ -23,8 +23,8 @@ const technologies: TechItem[] = [
 
 export function Stack() {
   return (
-    <section id="stack" className="py-32 relative overflow-hidden bg-background">
-      <div className="container mx-auto px-6 mb-20 text-center">
+    <section id="stack" className="py-24 md:py-32 relative overflow-hidden bg-background">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-20 text-center">
         <motion.p 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -37,7 +37,7 @@ export function Stack() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-foreground tracking-tighter"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tighter"
         >
           High-performance <span className="text-muted-foreground">foundations.</span>
         </motion.h2>
