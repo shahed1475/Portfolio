@@ -1,0 +1,13 @@
+/* ---------- experience ---------- */
+.exp-item { display: grid; grid-template-columns: 220px 1fr; gap: 24px 48px; padding: 36px 0; border-block: 1px solid var(--line); }
+.exp-when { display: grid; align-content: start; gap: 8px; }
+.exp-when .mono { font-size: 13px; color: var(--accent); }
+.exp-place { font-family: var(--font-display), serif; font-size: 1.5rem; letter-spacing: -0.02em; line-height: 1.15; }
+.exp-main h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px; }
+.exp-main p { color: var(--muted); max-width: 62ch; margin-bottom: 22px; }
+@media (max-width: 960px) {
+  .exp-item { grid-template-columns: 1fr; gap: 16px; }
+}
+@media print {
+  .exp-when .mono { color: #111; }
+}

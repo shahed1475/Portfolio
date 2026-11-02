@@ -1,4 +1,5 @@
 import { Fragment, type CSSProperties, type ReactNode } from "react";
+import "./experience.css";
 import { Effects } from "@/components/effects";
 import { caseStudies, moreWork, principles, privateWork, profile, stack, tools } from "@/data/site";
 
@@ -17,6 +18,8 @@ function Word({ i, children }: { i: number; children: ReactNode }) {
     </span>
   );
 }
+
+const popupgenix = ["Custom software", "AI sales agents", "Lead generation", "POS and commerce", "Process automation"];
 
 const lead = ["Automation", "that", "ships,", "runs,"];
 const tail = ["and", "checks", "its", "own", "work."];
@@ -70,8 +73,9 @@ export default function Home() {
             </h1>
             <div className="hero-row intro late">
               <p className="lede">
-                I’m {profile.name}, a software engineer building AI automation pipelines,
-                lead-intelligence platforms and full-stack web apps with Python and TypeScript.
+                I’m {profile.name}, founder of PopupGenix and a software engineer building AI
+                automation pipelines, lead-intelligence platforms and full-stack web apps with
+                Python and TypeScript.
               </p>
               <div className="hero-cta">
                 <a className="btn primary" href="#work">See the work</a>
@@ -87,6 +91,34 @@ export default function Home() {
                   <li key={t + "-copy"} aria-hidden="true">{t}</li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="section exp">
+          <div className="wrap">
+            <header className="sec-head" data-reveal>
+              <p className="eyebrow">Experience</p>
+              <h2>Founder, building software for businesses.</h2>
+            </header>
+            <div className="exp-item" data-reveal>
+              <div className="exp-when">
+                <span className="mono">Mar 2024 – Present</span>
+                <span className="exp-place">PopupGenix</span>
+              </div>
+              <div className="exp-main">
+                <h3>Founder &amp; Chief Executive Officer</h3>
+                <p>
+                  Founded PopupGenix to build custom software, AI sales agents and automation for
+                  businesses. Projects include lead-generation systems, AI customer-facing agents,
+                  POS and multivendor commerce platforms, and process automation.
+                </p>
+                <ul className="chips">
+                  {popupgenix.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
