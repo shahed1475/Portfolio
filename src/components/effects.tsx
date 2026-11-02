@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 /**
  * Progressive enhancement only: content is fully visible without JS.
- * Adds scroll-reveal to [data-reveal] and a pointer spotlight to .card.
+ * Adds scroll-reveal to [data-reveal], a pointer spotlight to .card and a scroll-progress value.
  */
 export function Effects() {
   useEffect(() => {
@@ -42,7 +42,12 @@ export function Effects() {
     document.addEventListener("pointermove", onMove, { passive: true });
 
     const nav = document.querySelector<HTMLElement>(".nav");
-    const onScroll = () => nav?.classList.toggle("is-stuck", window.scrollY > 12);
+    const root = document.documentElement;
+    const onScroll = () => {
+      nav?.classList.toggle("is-stuck", window.scrollY > 12);
+      const max = root.scrollHeight - window.innerHeight;
+      root.style.setProperty("--p", max > 0 ? String(Math.min(1, window.scrollY / max)) : "0");
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
