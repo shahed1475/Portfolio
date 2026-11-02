@@ -4,9 +4,10 @@ export const profile = {
   role: "Software engineer · AI automation & full-stack",
   github: "https://github.com/shahed1475",
   avatar: "https://github.com/shahed1475.png?size=240",
-  // Add these to show them in the contact section:
-  email: "",
-  linkedin: "",
+  email: "shahedalfahad19@gmail.com",
+  phone: "+8801879574874",
+  phoneDisplay: "+880 1879 574874",
+  linkedin: "https://www.linkedin.com/in/abdullah-al-fahad-sarkar-4b1a5b424/",
 };
 
 export type CaseStudy = {
@@ -86,16 +87,28 @@ export const moreWork = [
     repo: "https://github.com/shahed1475/AI-Content-Repurposer",
   },
   {
+    title: "ContentOps AI",
+    text: "Content operations platform with a backend API and a dashboard, run with Docker Compose.",
+    stack: "TypeScript · Docker Compose",
+    repo: "https://github.com/shahed1475/ContentOps-AI",
+  },
+  {
     title: "PromptOS Video",
     text: "Natural-language video editing, with its design system and Next.js foundation in place.",
     stack: "Next.js · Prisma · FFmpeg",
     repo: "https://github.com/shahed1475/ollA",
   },
   {
-    title: "Visa Application Autofill",
-    text: "Local-first assistant that organises an application. It never submits and never bypasses CAPTCHA, OTP or MFA.",
-    stack: "TypeScript · Fastify · Playwright",
-    repo: "https://github.com/shahed1475/Visa-application-automation",
+    title: "Veyra",
+    text: "Python pipeline that analyses a reference video and recreates it, with planning and implementation docs.",
+    stack: "Python · Video analysis",
+    repo: "https://github.com/shahed1475/Veyra",
+  },
+  {
+    title: "Lead Harvester",
+    text: "Python toolkit for harvesting and organising business leads.",
+    stack: "Python",
+    repo: "https://github.com/shahed1475/LEAD_HARVESTER",
   },
   {
     title: "POS Software",
@@ -117,10 +130,28 @@ export const moreWork = [
   },
 ];
 
+export const privateWork = [
+  {
+    title: "Jobbot",
+    text: "Finds jobs, tailors a country-styled resume PDF for each one, lists the skills you are missing and emails a digest. Nothing is submitted on your behalf.",
+    stack: "Python · MCP server",
+  },
+  {
+    title: "forge",
+    text: "Autonomous coding agent for the terminal. Works with local Ollama models and paid OpenAI-compatible models.",
+    stack: "Python · Ollama",
+  },
+];
+
+export const tools = [
+  "Python", "TypeScript", "FastAPI", "Playwright", "Supabase", "Docker",
+  "Next.js", "React", "PostgreSQL", "Ollama", "ffmpeg", "SQLite",
+];
+
 export const principles = [
   {
     title: "Guardrails before features",
-    text: "Lead Finder and the visa assistant document hard limits up front. Studio's autopilot is off until a person turns it on.",
+    text: "Lead Finder and Jobbot document hard limits up front. Studio's autopilot is off until a person turns it on.",
   },
   {
     title: "Models plan, code decides",

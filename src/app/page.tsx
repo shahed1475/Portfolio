@@ -1,5 +1,6 @@
+import { Fragment, type CSSProperties, type ReactNode } from "react";
 import { Effects } from "@/components/effects";
-import { caseStudies, moreWork, principles, profile, stack } from "@/data/site";
+import { caseStudies, moreWork, principles, privateWork, profile, stack, tools } from "@/data/site";
 
 const Arrow = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -7,10 +8,31 @@ const Arrow = () => (
   </svg>
 );
 
+const delay = (i: number, step = 70) => ({ "--d": String(i * step) + "ms" }) as CSSProperties;
+
+function Word({ i, children }: { i: number; children: ReactNode }) {
+  return (
+    <span className="w">
+      <span style={{ "--i": String(i) } as CSSProperties}>{children}</span>
+    </span>
+  );
+}
+
+const lead = ["Automation", "that", "ships,", "runs,"];
+const tail = ["and", "checks", "its", "own", "work."];
+
+const contacts = [
+  { label: "Email", value: profile.email, href: "mailto:" + profile.email, external: false },
+  { label: "Phone", value: profile.phoneDisplay, href: "tel:" + profile.phone, external: false },
+  { label: "LinkedIn", value: "Abdullah Al Fahad", href: profile.linkedin, external: true },
+  { label: "GitHub", value: "github.com/" + profile.handle, href: profile.github, external: true },
+];
+
 export default function Home() {
   return (
     <>
       <Effects />
+      <div className="progress" aria-hidden="true" />
       <a className="skip" href="#work">Skip to work</a>
 
       <header className="nav">
@@ -28,29 +50,44 @@ export default function Home() {
       <main id="top">
         <section className="hero">
           <div className="wrap">
-            <p className="status" data-reveal>
+            <p className="status intro">
               <img src={profile.avatar} alt="" width={24} height={24} /> <i aria-hidden="true" /> Open to full-time roles and freelance projects
             </p>
-            <h1 data-reveal>
-              Automation that ships, runs, <em>and checks its own work.</em>
+            <h1>
+              {lead.map((t, i) => (
+                <Fragment key={t}>
+                  <Word i={i}>{t}</Word>{" "}
+                </Fragment>
+              ))}
+              <em>
+                {tail.map((t, i) => (
+                  <Fragment key={t}>
+                    <Word i={lead.length + i}>{t}</Word>
+                    {i < tail.length - 1 ? " " : ""}
+                  </Fragment>
+                ))}
+              </em>
             </h1>
-            <div className="hero-row" data-reveal>
+            <div className="hero-row intro late">
               <p className="lede">
                 I’m {profile.name}, a software engineer building AI automation pipelines,
                 lead-intelligence platforms and full-stack web apps with Python and TypeScript.
               </p>
               <div className="hero-cta">
                 <a className="btn primary" href="#work">See the work</a>
-                <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
-                  GitHub <Arrow />
-                </a>
+                <a className="btn" href="#contact">Contact me</a>
               </div>
             </div>
-            <ul className="chips hero-chips" data-reveal aria-label="Core tools">
-              {["Python", "TypeScript", "FastAPI", "Playwright", "Supabase", "Docker"].map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
+            <div className="marquee intro late" role="group" aria-label="Core tools">
+              <ul className="marquee-track">
+                {tools.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+                {tools.map((t) => (
+                  <li key={t + "-copy"} aria-hidden="true">{t}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -91,8 +128,8 @@ export default function Home() {
 
             <h3 className="sub" data-reveal>More projects</h3>
             <div className="grid-more">
-              {moreWork.map((m) => (
-                <a key={m.title} className="card more" href={m.repo} target="_blank" rel="noreferrer" data-reveal>
+              {moreWork.map((m, i) => (
+                <a key={m.title} className="card more" href={m.repo} target="_blank" rel="noreferrer" data-reveal style={delay(i % 4)}>
                   <div className="more-top">
                     <h4>{m.title}</h4>
                     <Arrow />
@@ -100,6 +137,20 @@ export default function Home() {
                   <p>{m.text}</p>
                   <span className="mono">{m.stack}</span>
                 </a>
+              ))}
+            </div>
+
+            <h3 className="sub" data-reveal>Private builds</h3>
+            <div className="grid-private">
+              {privateWork.map((m, i) => (
+                <div key={m.title} className="card more private" data-reveal style={delay(i)}>
+                  <div className="more-top">
+                    <h4>{m.title}</h4>
+                    <span className="tag">Private repository</span>
+                  </div>
+                  <p>{m.text}</p>
+                  <span className="mono">{m.stack}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -113,7 +164,7 @@ export default function Home() {
             </header>
             <div className="principles">
               {principles.map((p, i) => (
-                <div key={p.title} className="principle" data-reveal>
+                <div key={p.title} className="principle" data-reveal style={delay(i)}>
                   <span className="mono">0{i + 1}</span>
                   <h3>{p.title}</h3>
                   <p>{p.text}</p>
@@ -152,24 +203,21 @@ export default function Home() {
             <h2 className="big" data-reveal>
               Let’s build something<br /><em>that runs on its own.</em>
             </h2>
-            <div className="hero-cta" data-reveal>
-              {profile.email && (
-                <a className="btn primary" href={"mailto:" + profile.email}>Email me</a>
-              )}
-              <a
-                className={profile.email ? "btn" : "btn primary"}
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Message on GitHub <Arrow />
-              </a>
-              {profile.linkedin && (
-                <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">
-                  LinkedIn <Arrow />
-                </a>
-              )}
-            </div>
+            <ul className="contact-list">
+              {contacts.map((c, i) => (
+                <li key={c.label} data-reveal style={delay(i, 80)}>
+                  <a
+                    className="contact-item"
+                    href={c.href}
+                    {...(c.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                  >
+                    <span className="c-label">{c.label}</span>
+                    <span className="c-value">{c.value}</span>
+                    <Arrow />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </main>
