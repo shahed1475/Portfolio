@@ -1,65 +1,20 @@
-# Fahad | AI Systems Architect & SaaS Founder
+# Abdullah Al Fahad — Portfolio
 
-![Portfolio Preview](/public/projects/blackgpt.png)
+Personal portfolio for [Abdullah Al Fahad](https://github.com/shahed1475), software engineer working on AI automation, lead-intelligence platforms and full-stack web apps.
 
-Engineering the Era of Autonomous Intelligence. Founder of PopupGenix, bridging the gap between raw LLM research and production-grade SaaS.
+Built with Next.js (App Router, static export), TypeScript and hand-written CSS. No UI kit, no tracking.
 
-## 🚀 Overview
+## Edit the content
 
-This is a premium, high-performance portfolio built with **Next.js 15 (App Router)** and **Tailwind CSS**. It features a modern, "bento-box" inspired design with smooth animations and a focus on technical excellence.
+All copy lives in one file: `src/data/site.ts` (profile, case studies, projects, stack). Add `email` and `linkedin` there to show them in the contact section.
 
-### Key Features
-- **Modern Tech Stack:** Next.js, TypeScript, Tailwind CSS, Framer Motion.
-- **Bento Design:** Organized, visually appealing grid layouts for projects and services.
-- **Premium Aesthetics:** Dark mode by default with high-quality gradients and interactive elements.
-- **Case Studies:** Detailed deep-dives into production-grade AI systems like **BlackGPT.us** and **klevere.ai**.
-- **Agentic Workflows:** Showcasing expertise in autonomous AI agent orchestration.
+## Run locally
 
-## 🛠️ Tech Stack
-
-- **Framework:** [Next.js](https://nextjs.org/) (App Router)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/) & [Material Symbols](https://fonts.google.com/icons)
-- **Deployment:** [Vercel](https://vercel.com/)
-
-## 📂 Project Structure
-
-```text
-├── src/
-│   ├── app/            # Next.js App Router (Layouts, Pages)
-│   ├── components/     # Reusable UI components (Bento cards, Sections)
-│   ├── lib/            # Utility functions
-├── public/
-│   ├── projects/       # High-res case study images
-├── legacy/             # Original static HTML version
+```bash
+npm ci
+npm run dev
 ```
 
-## ⚡ Getting Started
+## Deploy
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/shahed1475/Portfolio.git
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-
-## 🌐 Live Demo
-
-Visit the live portfolio at: [https://portfolio-shahed1475.vercel.app/](https://portfolio-shahed1475.vercel.app/)
-
----
-© 2026 PopupGenix. Engineered with precision by Fahad.
+Pushes to `main` build and publish to GitHub Pages via `.github/workflows/nextjs.yml`.
