@@ -1,6 +1,7 @@
 import { Fragment, type CSSProperties, type ReactNode } from "react";
 import "./experience.css";
 import { Effects } from "@/components/effects";
+import { Flow } from "@/components/flow";
 import { caseStudies, moreWork, principles, privateWork, profile, stack, tools } from "@/data/site";
 
 const Arrow = () => (
@@ -82,6 +83,13 @@ export default function Home() {
                 <a className="btn" href="#contact">Contact me</a>
               </div>
             </div>
+            <div className="hero-flow card intro late">
+              <Flow steps={caseStudies[0].flow ?? []} label="One of my pipelines, end to end" mark="Review" />
+              <p className="hero-flow-note">
+                The review step blocks a video on bad files, repeated lines, duplicate titles or risky claims
+                before anything is scheduled.
+              </p>
+            </div>
             <div className="marquee intro late" role="group" aria-label="Core tools">
               <ul className="marquee-track">
                 {tools.map((t) => (
@@ -145,6 +153,7 @@ export default function Home() {
                   </div>
                   <div className="case-main">
                     <p className="summary">{c.summary}</p>
+                    {c.flow ? <Flow steps={c.flow} label={c.flowLabel ?? "Pipeline"} /> : null}
                     <ul className="points">
                       {c.points.map((p) => (
                         <li key={p}>{p}</li>
