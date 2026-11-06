@@ -18,6 +18,8 @@ export type CaseStudy = {
   points: string[];
   stack: string[];
   repo?: string;
+  flowLabel?: string;
+  flow?: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -34,6 +36,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Python", "Ollama", "ffmpeg", "YouTube Data API", "Docker"],
     repo: "https://github.com/shahed1475/Studio",
+    flowLabel: "Pipeline",
+    flow: ["Script", "Voice", "Footage", "Render", "Review", "Upload"],
   },
   {
     index: "02",
@@ -48,6 +52,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Python", "FastAPI", "Playwright", "SQLite"],
     repo: "https://github.com/shahed1475/Advance-lead-generation",
+    flowLabel: "Pipeline",
+    flow: ["Discover", "Research", "Deduplicate", "Export"],
   },
   {
     index: "03",
@@ -62,6 +68,8 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Python", "Playwright", "Docker", "Allure", "OWASP ZAP"],
     repo: "https://github.com/shahed1475/Software-testing-Ai",
+    flowLabel: "Pipeline",
+    flow: ["Tagged suites", "Docker services", "Security scan", "Allure report"],
   },
   {
     index: "04",
@@ -75,6 +83,8 @@ export const caseStudies: CaseStudy[] = [
       "Documents, versions, clauses, obligations and templates modelled end to end.",
     ],
     stack: ["Supabase", "PostgreSQL", "pgvector", "TypeScript"],
+    flowLabel: "Data model",
+    flow: ["Documents", "Versions", "Clauses", "Obligations", "Templates"],
   },
 ];
 
