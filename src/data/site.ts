@@ -126,10 +126,10 @@ export const moreWork = [
     repo: "https://github.com/shahed1475/Pos-software",
   },
   {
-    title: "Nebula Hub Core",
-    text: "React and Supabase web app with a background worker.",
+    title: "Software Agency Portal",
+    text: "Agency website with a client portal and admin panel, plus an AI worker that researches companies and drafts outreach.",
     stack: "React · Supabase · Vite",
-    repo: "https://github.com/shahed1475/nebula-hub-core",
+    repo: "https://github.com/shahed1475/software-agency-portal",
   },
   {
     title: "PopupGenix Website",
