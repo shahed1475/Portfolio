@@ -308,3 +308,36 @@ h2 {
   .hero-cta { display: none; }
   .will-reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- flow diagrams ---------- */
+.flow { margin: 0 0 22px; --step: 0.55s; --cycle: calc(var(--n, 5) * var(--step) + 1.6s); }
+.flow-label { font-family: var(--font-mono), ui-monospace, monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.flow-steps { list-style: none; display: flex; gap: 0; padding: 0; margin: 0; }
+.flow-steps li { position: relative; flex: 1 1 0; min-width: 0; display: grid; gap: 10px; justify-items: start; padding-right: 8px; }
+.flow-dot { position: relative; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--line-2); background: var(--bg); z-index: 1; }
+.flow-dot::after { content: ""; position: absolute; inset: -1.5px; border-radius: 50%; background: var(--accent); opacity: 0; animation: flow-lit var(--cycle) ease-out infinite; animation-delay: calc(var(--i, 0) * var(--step)); }
+.flow-link { position: absolute; top: 5px; left: 20px; right: 8px; height: 2px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.flow-link::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, var(--accent), transparent); transform: translateX(-100%); animation: flow-sweep var(--cycle) ease-in-out infinite; animation-delay: calc(var(--i, 0) * var(--step)); }
+.flow-name { font-size: 13px; line-height: 1.3; color: var(--text); letter-spacing: -0.005em; }
+.flow-steps li.is-mark .flow-name { color: var(--accent); font-weight: 600; }
+.flow-steps li.is-mark .flow-dot { border-color: var(--accent); }
+@keyframes flow-lit { 0% { opacity: 0; transform: scale(0.6); } 5% { opacity: 1; transform: scale(1); } 16% { opacity: 1; transform: scale(1); } 28%, 100% { opacity: 0; transform: scale(1); } }
+@keyframes flow-sweep { 0% { transform: translateX(-100%); opacity: 0; } 3% { opacity: 1; } 14% { transform: translateX(100%); opacity: 1; } 15%, 100% { transform: translateX(100%); opacity: 0; } }
+.hero-flow { margin-top: 56px; padding: 26px 28px 22px; }
+.hero-flow .flow { margin-bottom: 18px; }
+.hero-flow-note { color: var(--muted); font-size: 14px; max-width: 64ch; }
+.case .flow { padding: 18px 0 4px; border-top: 1px solid var(--line); margin-top: 26px; margin-bottom: 26px; }
+@media (max-width: 700px) {
+  .flow-steps { flex-wrap: wrap; row-gap: 16px; }
+  .flow-steps li { flex: 0 0 50%; }
+  .flow-link { display: none; }
+  .hero-flow { margin-top: 40px; padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot::after, .flow-link::after { animation: none; }
+  .flow-dot { background: var(--accent); border-color: var(--accent); }
+}
+@media print {
+  .flow-dot::after, .flow-link::after { animation: none; }
+  .hero-flow { display: none; }
+}
