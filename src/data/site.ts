@@ -17,7 +17,7 @@ export type CaseStudy = {
   summary: string;
   points: string[];
   stack: string[];
-  repo: string;
+  repo?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -75,7 +75,6 @@ export const caseStudies: CaseStudy[] = [
       "Documents, versions, clauses, obligations and templates modelled end to end.",
     ],
     stack: ["Supabase", "PostgreSQL", "pgvector", "TypeScript"],
-    repo: "https://github.com/shahed1475/DealDoc-AI",
   },
 ];
 
