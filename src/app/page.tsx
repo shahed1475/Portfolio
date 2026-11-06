@@ -150,9 +150,13 @@ export default function Home() {
                         <li key={p}>{p}</li>
                       ))}
                     </ul>
-                    <a className="link" href={c.repo} target="_blank" rel="noreferrer">
-                      View source <Arrow />
-                    </a>
+                    {c.repo ? (
+                      <a className="link" href={c.repo} target="_blank" rel="noreferrer">
+                        View source <Arrow />
+                      </a>
+                    ) : (
+                      <span className="tag">Private repository</span>
+                    )}
                   </div>
                 </article>
               ))}
