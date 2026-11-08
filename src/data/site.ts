@@ -89,6 +89,7 @@ export const caseStudies: CaseStudy[] = [
 ];
 
 export const moreWork = [
+  { title: "AutoLead Manager (live)", text: "Sales growth dashboard for lead discovery, email campaigns and pipeline tracking. Live frontend demo; the Python backend runs on a server.", stack: "React · Vite · Python", repo: "https://autolead-manager.pages.dev/" },
   {
     title: "AI Content Repurposer",
     text: "FastAPI and React app that turns video and audio into transcripts, summaries, captions and subtitles.",
