@@ -86,6 +86,7 @@ export const caseStudies: CaseStudy[] = [
     flowLabel: "Data model",
     flow: ["Documents", "Versions", "Clauses", "Obligations", "Templates"],
   },
+  { index: "05", title: "AI Bot Visit Tracker", kicker: "AI crawler analytics middleware", summary: "Drop-in middleware for Node.js, Flask, Django and PHP that detects and logs visits from AI bots such as GPTBot, ClaudeBot and Gemini, and shows which pages they read.", points: ["Recognises 20+ AI user agents and classifies each request as indexing or retrieval.", "One schema across SQLite, MySQL and PostgreSQL, with asynchronous logging, stats endpoints and CSV or JSON export.", "Examples and test scripts for every framework, so it drops into an existing app in minutes."], stack: ["Node.js", "Python", "PHP", "SQL"], repo: "https://github.com/shahed1475/ai-bot-visit-tracker", flowLabel: "Pipeline", flow: ["Request", "Detect bot", "Classify", "Log", "Analytics"] },
 ];
 
 export const moreWork = [
@@ -141,6 +142,7 @@ export const moreWork = [
 ];
 
 export const privateWork = [
+  { title: "Visa Application Assistant", text: "Local-first assistant that organises application documents and helps fill a configurable portal form under the user's control. It never submits and never bypasses CAPTCHA or OTP.", stack: "TypeScript · Fastify · Playwright · SQLite" },
   {
     title: "Jobbot",
     text: "Finds jobs, tailors a country-styled resume PDF for each one, lists the skills you are missing and emails a digest. Nothing is submitted on your behalf.",
