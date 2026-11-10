@@ -142,7 +142,8 @@ export const moreWork = [
 ];
 
 export const privateWork = [
-  { title: "Visa Application Assistant", text: "Local-first assistant that organises application documents and helps fill a configurable portal form under the user's control. It never submits and never bypasses CAPTCHA or OTP.", stack: "TypeScript · Fastify · Playwright · SQLite" },
+  { title: "Inno-AI (in development)", text: "AI-powered international ingredient compliance platform: real-time compliance checks, a label scanner and a substitution engine. Under active development and not yet deployed.", stack: "Laravel · Livewire · PostgreSQL · pgvector" },
+{ title: "Visa Application Assistant", text: "Local-first assistant that organises application documents and helps fill a configurable portal form under the user's control. It never submits and never bypasses CAPTCHA or OTP.", stack: "TypeScript · Fastify · Playwright · SQLite" },
   {
     title: "Jobbot",
     text: "Finds jobs, tailors a country-styled resume PDF for each one, lists the skills you are missing and emails a digest. Nothing is submitted on your behalf.",
