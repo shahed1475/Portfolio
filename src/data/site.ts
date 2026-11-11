@@ -91,6 +91,7 @@ export const caseStudies: CaseStudy[] = [
 
 export const moreWork = [
   { title: "AutoLead Manager (live)", text: "Sales growth dashboard for lead discovery, email campaigns and pipeline tracking. Live frontend demo; the Python backend runs on a server.", stack: "React · Vite · Python", repo: "https://autolead-manager.pages.dev/" },
+{ title: "Inno-AI (live)", text: "Ingredient compliance checker for EU and US food additive rules with substitution ideas. Runs on a Cloudflare Worker with a D1 SQLite database.", stack: "TypeScript · Cloudflare Workers · D1", repo: "https://inno-ai.shahedalfahad19.workers.dev/" },
   {
     title: "AI Content Repurposer",
     text: "FastAPI and React app that turns video and audio into transcripts, summaries, captions and subtitles.",
@@ -142,8 +143,7 @@ export const moreWork = [
 ];
 
 export const privateWork = [
-  { title: "Inno-AI (in development)", text: "AI-powered international ingredient compliance platform: real-time compliance checks, a label scanner and a substitution engine. Under active development and not yet deployed.", stack: "Laravel · Livewire · PostgreSQL · pgvector" },
-{ title: "Visa Application Assistant", text: "Local-first assistant that organises application documents and helps fill a configurable portal form under the user's control. It never submits and never bypasses CAPTCHA or OTP.", stack: "TypeScript · Fastify · Playwright · SQLite" },
+  { title: "Visa Application Assistant", text: "Local-first assistant that organises application documents and helps fill a configurable portal form under the user's control. It never submits and never bypasses CAPTCHA or OTP.", stack: "TypeScript · Fastify · Playwright · SQLite" },
   {
     title: "Jobbot",
     text: "Finds jobs, tailors a country-styled resume PDF for each one, lists the skills you are missing and emails a digest. Nothing is submitted on your behalf.",
